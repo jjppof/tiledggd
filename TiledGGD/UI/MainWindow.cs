@@ -363,6 +363,10 @@ namespace TiledGGD
 
         void GraphicsPanel_Paint(object sender, PaintEventArgs e)
         {
+            PictureHolder.AutoScrollMinSize = new Size(
+                (int)(GraphicsData.Width * GraphicsData.Zoom),
+                (int)(GraphicsData.Height * GraphicsData.Zoom)
+            );
             graphicsData.paint(this, e);
         }
         #endregion
