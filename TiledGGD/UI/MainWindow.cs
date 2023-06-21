@@ -24,15 +24,15 @@ namespace TiledGGD
         internal static BindingSet BindingSet { get { return bindingSet; } }
 
         #region constructor
-        public MainWindow()
+        public MainWindow(PaletteData _paletteData, GraphicsData _graphicsData)
         {
             InitializeComponent();
 
             this.DoubleBuffered = true;
             mainWindow = this;
 
-            paletteData = new PaletteData(PaletteFormat.FORMAT_2BPP, PaletteOrder.BGR);
-            graphicsData = new GraphicsData(paletteData);           
+            paletteData = _paletteData;
+            graphicsData = _graphicsData;           
 
             this.Icon = new Icon(this.GetType().Assembly.GetManifestResourceStream("TiledGGD.program_icon.ico"));
 
@@ -377,6 +377,10 @@ namespace TiledGGD
         /// </summary>
         public static void DoRefresh()
         {
+            if (mainWindow == null)
+            {
+                return;
+            }
             mainWindow.Refresh();
         }
         #endregion

@@ -9,7 +9,7 @@ using System.IO;
 
 namespace TiledGGD
 {
-    class GraphicsData : BrowsableData
+    public class GraphicsData : BrowsableData
     {
         #region Fields
 

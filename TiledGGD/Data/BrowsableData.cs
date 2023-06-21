@@ -9,7 +9,7 @@ using TiledGGD.BindingTools;
 
 namespace TiledGGD
 {
-    abstract unsafe class BrowsableData
+    public abstract unsafe class BrowsableData
     {
         #region Fields
 

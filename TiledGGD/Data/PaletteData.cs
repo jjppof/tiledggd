@@ -8,7 +8,7 @@ using System.IO;
 
 namespace TiledGGD
 {
-    class PaletteData : BrowsableData
+    public class PaletteData : BrowsableData
     {
         #region Fields
 
@@ -60,7 +60,7 @@ namespace TiledGGD
         /// <summary>
         /// The location of the Alpha value
         /// </summary>
-        private static AlphaSettings alphaSettings = new AlphaSettings();
+        private static AlphaSettings alphaSettings;
         /// <summary>
         /// The location of the Alpha value
         /// </summary>
@@ -174,12 +174,14 @@ namespace TiledGGD
         internal PaletteData()
             : this(PaletteFormat.FORMAT_2BPP, PaletteOrder.BGR)
         {
+            alphaSettings = new AlphaSettings();
         }
 
         internal PaletteData(PaletteFormat pFormat, PaletteOrder pOrder)
         {
             palFormat = pFormat;
             palOrder = pOrder;
+            alphaSettings = new AlphaSettings();
         }
 
         #endregion
